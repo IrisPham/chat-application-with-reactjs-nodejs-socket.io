@@ -7,6 +7,7 @@ module.exports = function(socket){
 	// console.log('\x1bc'); //clears console
 	console.log("Socket Id:" + socket.id);
 
+	//Listen when the users login and send Id to authenticate
 	socket.on(LOGIN,()=>{
 		io.emit(LOGIN,socket.id);
 	});
