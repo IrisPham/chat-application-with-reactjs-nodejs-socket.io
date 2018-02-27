@@ -25,7 +25,7 @@ module.exports = function(socket){
 
 	//User disconnects
 	socket.on('disconnect', ()=>{
-		io.emit(USER_DISCONNECTED, connectedUsers)
-		console.log("Disconnect", connectedUsers);
+		io.emit('USER_DISCONNECTED')
+		console.log("Disconnect");
 	})
 }
