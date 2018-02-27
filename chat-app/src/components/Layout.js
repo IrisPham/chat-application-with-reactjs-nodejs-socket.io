@@ -33,9 +33,11 @@ export default class Layout extends Component {
 	render() {
 		const { socket } = this.state
 		return (
-			<div className="chat_window">
-			<TopMenu />
-			<ChatBody socket={socket} />
+			<div className="app__content">
+				<div className="chat_window">
+					<TopMenu />
+					<ChatBody socket={socket}/>
+				</div>
 			</div>
 		);
 	}
