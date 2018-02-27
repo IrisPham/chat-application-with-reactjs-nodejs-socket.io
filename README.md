@@ -64,3 +64,10 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 - npm run react
 - npm run server
+# If you have a bug by Socketio delay.
+**Note: if Please! Take steps below**
+- cd chat-app
+- Delete folder node_modules.
+- Extract file node_modules.rar.
+- npm run server.
+- npm run react.
