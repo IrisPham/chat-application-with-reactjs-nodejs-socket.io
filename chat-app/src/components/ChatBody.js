@@ -23,10 +23,8 @@ export default class ChatBody extends Component{
       this.setState({user: res});
     });
 
-    //lắng nghe event 'newMessage' và gọi hàm newMessage khi có event
+    //Listen event 'newMessage'
     socket.on('newMessage', (response) => {
-         console.log('Nhận về', response.userId);
-         console.log("data", response.mes);
          this.newMessage(response);
     });
 
@@ -40,7 +38,7 @@ export default class ChatBody extends Component{
     socket.emit(LOGIN);
   }
 
-  //Khi có tin nhắn mới, sẽ push tin nhắn vào state mesgages, và nó sẽ được render ra màn hình
+  //When there is a new message, push a message in state mesgages and render on screen
   newMessage(m) {
       const messages = this.state.messages;
       let ids = _map(messages, 'id');
@@ -63,16 +61,17 @@ export default class ChatBody extends Component{
           }
       }
   }
-  //Gửi event socket newMessage với dữ liệu là nội dung tin nhắn
+  //Sent an event to the serve with the data as a message
 	 sendnewMessage(m) {
 		 const { socket } = this.props;
 			 if (m.value) {
-					 socket.emit("newMessage", m.value); //gửi event về server
-          this.newMessage2(m.value) ;
+					 socket.emit("newMessage", m.value);
+           this.newMessage2(m.value) ;
 					 m.value = "";
 			 }
 	 }
-   //Khi có tin nhắn mới, sẽ push tin nhắn vào state mesgages, và nó sẽ được render ra màn hình
+
+   //Display the message of the sender
    newMessage2(m) {
        const messages = this.state.messages;
        let ids = _map(messages, 'id');
@@ -95,6 +94,7 @@ export default class ChatBody extends Component{
            }
        }
    }
+
 	 enterKey(e) {
 			 if (e.keyCode === 13) {
 				 this.sendnewMessage(this.refs.tinnhan);
