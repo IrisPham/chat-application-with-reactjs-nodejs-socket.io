@@ -55,7 +55,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 # To run the app locally:
 	git clone https://github.com/IrisPham/chat-application-with-reactjs-nodejs-socket.io.git
 	cd chat-app
-	npm install
+  npm install
   npm install express
-	npm i --save socket.io uuid
-	npm i --save-dev concurrently nodemon
+  npm i --save socket.io uuid
+  npm i --save-dev concurrently nodemon
